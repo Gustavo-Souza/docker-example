@@ -1,7 +1,7 @@
 <?php
 
 $db_database = "book_db";
-$db_hostname = "172.17.0.2"; // "mysql-container"; // 172.17.0.2
+$db_hostname = "mariadb-container"; // "mysql-container"; // 172.17.0.2
 $db_username = "root";
 $db_password = "pedra123";
 

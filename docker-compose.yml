@@ -1,0 +1,25 @@
+version: "3.2"
+
+services:
+  db:
+    image: mariadb
+    container_name: mariadb-container
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: pedra123
+
+    volumes:
+      - ./core/data/mysql:/var/lib/mysql
+
+  website:
+    build:
+      context: ./api/website
+    container_name: php-container
+    restart: always
+    volumes:
+      - ./api/website:/var/www
+    ports:
+      - 8080:80
+    depends_on: # Same as --link
+      - db
